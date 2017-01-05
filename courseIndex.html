@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成长课</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="background">
+    <div class="header">
+        <div class="contain">
+            <div class="header-content">
+                <div class="logo">LOGO</div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-bar">
+            <div class="contain">
+                <ul class="nav-list pull-left">
+                    <li class="nav-item active"><a href="index.html">首页</a></li>
+                    <li class="nav-item"><a href="#">成长课</a></li>
+                    <li class="nav-item"><a>成长Bar</a></li>
+                    <li class="nav-item"><a href="article.html">成长点拨</a></li>
+                </ul>
+                <ul class="nav-sign pull-right">
+                    <li class="nav-item"><a>注册</a></li>
+                    <li class="nav-item"><a>登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="page-content">
+                <div class="nav-box">
+                    <span class="nav-label ">大类</span>
+                    <div class="nav-classify">
+                        <div class="nav-classify-btn active">全部</div>
+                        <div class="nav-classify-btn">职场技能</div>
+                        <div class="nav-classify-btn">创新创业</div>
+                        <div class="nav-classify-btn">生活.兴趣</div>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <span class="nav-label">小类</span>
+                    <div class="nav-classify">
+                        <div class="nav-classify-btn active">全部</div>
+                    </div>
+                </div>
+                <div class="nav-box">
+                    <div class="nav-sort">
+                        <div class="nav-sort-btn active">人气</div>
+                        <div class="nav-sort-btn">价格</div>
+                        <div class="nav-sort-btn">最新</div>
+                    </div>
+                </div>
+                <div class="course-box">
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+        <div class="footer-cont">
+            <ul class="footer-nav">
+                <li class="footer-nav-list">
+                    <h5 class="footer-nav-title">关于我们</h5>
+                    <p class="footer-nav-item">这是一个给奔三的人免费探索兴趣爱好的网站</p>
+                </li>
+                <li class="footer-nav-list">
+                    <h5 class="footer-nav-title">联系合作</h5>
+                    <a class="footer-nav-item">联系我们</a>
+                    <a class="footer-nav-item">合作方式</a>
+                </li>
+                <li class="footer-nav-list">
+                    <h5 class="footer-nav-title">关注我们</h5>
+                    <a class="footer-nav-item">微博</a>
+                    <a class="footer-nav-item">微信</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <div class="footer-copy-cont">粤IC备案00000000号&nbsp;&nbsp;Copyright &copy; 2015-2017</div>
+    </div>
+</div>
+
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/createCourse.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var $box = $('.wrapper .page-content .course-box');
+    var $class_title = $('.wrapper .page-content .course-box .class-box .class-title');
+    //鼠标滑入显示全部文字
+    $box.on('mouseenter mouseleave','.class-box',function(e){
+
+        if(e.type == 'mouseenter') {
+            $(this).find('.class-title').removeClass('class-ellipsis');
+        }else if(e.type == 'mouseleave'){
+            $(this).find('.class-title').addClass("class-ellipsis");
+        }
+    });
+</script>
+<script>
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 90) {
+            $('.nav-bar').addClass('fixed');
+        } else {
+            $('.nav-bar').removeClass('fixed');
+        }
+    })
+</script>
+</body>
+</html>
